@@ -4,7 +4,7 @@ include_once ("./include/functions.php");
 header('Content-Type: text/html; charset=utf-8');
 
 if(!isset($_SESSION['user']) ){
-    header("location:http://localhost/hemmah-1/login.php");
+    header("location:http://localhost/project-forms/login.php");
 }
 $user=$_SESSION['user'];
 
@@ -249,7 +249,7 @@ $forms = $execute->fetch_all();
                         <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء الفريق التربوي"?"checked": "" ?> value="احد اعضاء الفريق التربوي">احد اعضاء الفريق التربوي<br>
                         <input type="radio" name="jop" <?php echo $form[6]=="مسؤول الموارد - التدريب و التطوير"?"checked": "" ?> value="مسؤول الموارد - التدريب و التطوير">مسؤول الموارد - التدريب و التطوير<br>
                         <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء فريق الموارد - التدريب"?"checked": "" ?> value="احد اعضاء فريق الموارد - التدريب">احد اعضاء فريق الموارد - التدريب<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="مسؤول الأنشطة"?"checked": "" ?> value="مسؤول الأنشطة">مسؤول الأنشطة<br>
+                        <input type="radio" name="jop" <?php echo $form[6]=="مسؤول الأنشطة"?"checked":"" ?> value="مسؤول الأنشطة">مسؤول الأنشطة<br>
                         <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء فريق الانشطة"?"checked": "" ?>value="احد اعضاء فريق الانشطة">احد اعضاء فريق الانشطة<br>
                         <input type="radio" name="jop" <?php echo $form[6]=="غير ذلك"?"checked": "" ?> value="غير ذلك">غير ذلك<br>
 

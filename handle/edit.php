@@ -3,7 +3,7 @@ include_once ('../include/config.php');
 include_once ('../include/functions.php');
 $user = $_SESSION['user'];
 if (!isset($_SESSION['user'])) {
-    header("location: http://localhost/hemmah-1/login.php");
+    header("location: http://localhost/project-forms/login.php");
 }
     $skills = $_POST["skill"];
     $three = " ";
@@ -53,4 +53,4 @@ $query = "UPDATE forms SET m1='$m1',m2='$m2',m3='$m3',Optional='$two',Nteam='$te
   completHours='$completHours',average='$average', yourself='$yourself',dis='$dis',advyourself='$advyourself' WHERE user_id='$user'";
 header('Content-Type: text/html; charset=utf-8');
 $execute = $mysql->query($query);
-header("location:http://localhost/hemmah-1/profile.php");
+header("location:http://localhost/project-forms/profile.php");

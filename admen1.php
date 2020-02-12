@@ -9,7 +9,7 @@ include_once ('./include/functions.php');
 //    header("location: http://localhost/hemmah-1/login.php");
 //}
 if(!isset($_SESSION['user']) ){
-    header("location:http://localhost/hemmah-1/login.php");
+    header("location:http://localhost/project-forms/login.php");
 }
 $query = "SELECT * FROM users";
 $execute = $mysql->query($query);
@@ -58,7 +58,7 @@ header('Content-Type: text/html; charset=utf-8');
     </form>
 </section>
 
-<h1 id="info-general" style="margin-bottom: 3rem;margin-top: 5rem"> table one </h1>
+<h1 id="info-general" style="margin-bottom: 3rem;margin-top: 5rem"> Table 1</h1>
 <section class=" d-flex flex-column "  style="">
     <table class="table table-sm table-dark " style="text-align: center; align-self: center;
 align-items: center">
@@ -104,8 +104,8 @@ align-items: center">
 
 
 
-<h1>table tow </h1>
-<section class=" d-flex flex-column ml-2" id="information-imp" style="width:250rem;">
+<h1>Table 2 </h1>
+<section class=" d-flex flex-column ml-2" id="information-imp" style="width:300rem;">
     <table class="table table-sm table-dark">
         <thead>
 

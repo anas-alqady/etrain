@@ -25,10 +25,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 //    else
     if ($execute->num_rows === 1 ) {
         $_SESSION['user'] = $execute->fetch_assoc()["id"]; // 11
-                header("location: http://localhost/hemmah-1");
+                header("location: http://localhost/project-forms");
     }
     else{
-        header("location: http://localhost/hemmah-1/login.php");
+        header("location: http://localhost/project-forms/login.php");
     }
 
 

@@ -3,7 +3,7 @@ include_once ("./include/config.php");
 include_once ("./include/functions.php");
 
 if(!isset($_SESSION['user']) ){
-    header("location:http://localhost/hemmah-1/login.php");
+    header("location:http://localhost/project-forms/login.php");
 }
 else
     {
@@ -11,7 +11,7 @@ else
     $query = "SELECT * FROM forms WHERE user_id =$id"; //11
     $execute = $mysql->query($query);
     if ($execute->num_rows === 1) {
-        header("location: http://localhost/hemmah-1/edit.php");
+        header("location: http://localhost/project-forms/edit.php");
     }
 }
 ?>
