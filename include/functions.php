@@ -30,5 +30,9 @@ function checkbox3($id,$value) {
 }
 
 
-
+function fallcheckbox($name_table,$id) {
+    $mysql=new mysqli('localhost','root','','hemma');
+    $query="SELECT * FROM '$name_table' where user_id='$id' ";
+    $execute=$mysql->query($query)->num_rows;
+}
 

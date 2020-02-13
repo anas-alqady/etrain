@@ -4,7 +4,7 @@ include_once ("./include/functions.php");
 header('Content-Type: text/html; charset=utf-8');
 
 if(!isset($_SESSION['user']) ){
-    header("location:http://localhost/project-forms/login.php");
+    header("location:http://localhost/hemma-1/login.php");
 }
 $user=$_SESSION['user'];
 
@@ -17,7 +17,7 @@ $forms = $execute->fetch_all();
 
 <html>
 <head>
-    <title> index </title>
+    <title> update </title>
     <link rel="stylesheet" href="theme/css/style.css">
     <link rel="stylesheet" href="theme/css/bootstrab">
     <link rel="stylesheet" href="theme/css/bootstrab/bootstrap.css">
@@ -175,47 +175,58 @@ $forms = $execute->fetch_all();
                     </div>
 
                            <h5>هل حضرت المستوى التمهيدي؟ السؤال خاص بدفعة 018 وما بعد</h5>
-                        <input type="radio" name="m1" <?php echo $form[1]=="yes"?"checked": "" ?> id="" value="yes"> yes <br>
-                        <input type="radio" name="m1" <?php echo $form[1]=="no"?"checked": "" ?> id="" value=yes"> no <br>
+                        <lable>  <input type="radio" name="m1" <?php echo $form[1]=="yes"?"checked": "" ?> id="" value="yes"> نعم   </lable>
+                        <label>  <input type="radio" name="m1" <?php echo $form[1]=="no"?"checked": "" ?> id="" value=no"> لا <br> </label>
 
 
 
                         <hr style="width: 40rem ; height: 1rem">
                         <h5>  هل حضرت المستوى التأسيسي للكتلة
                         </h5>
-                            <input type="radio" name="m2" <?php echo $form[2]=="YES-1"?"checked": "" ?> value="YES-1" >نعم - مرة واحدة <br>
-                            <input type="radio" name="m2" <?php echo $form[2]=="YES-2"?"checked": "" ?>  value="YES-2">نعم - مرتين <br>
-                            <input type="radio" name="m2" <?php echo $form[2]=="YES-3"?"checked": "" ?>  value="YES-3" >نعم - ثلاثة مرات <br>
-                            <input type="radio" name="m2" <?php echo $form[2]=="NO"?"checked": "" ?>  value="NO">لا <br>
+                         <lable>   <input type="radio" name="m2" <?php echo $form[2]=="YES-1"?"checked": "" ?> value="YES-1" >نعم - مرة واحدة <br></lable>
+                          <lable>  <input type="radio" name="m2" <?php echo $form[2]=="YES-2"?"checked": "" ?>  value="YES-2">نعم - مرتين <br></lable>
+                          <lable>  <input type="radio" name="m2" <?php echo $form[2]=="YES-3"?"checked": "" ?>  value="YES-3" >نعم - ثلاثة مرات <br></lable>
+                          <lable>  <input type="radio" name="m2" <?php echo $form[2]=="NO"?"checked": "" ?>  value="NO">لا <br></lable>
 
                             <hr style="width: 40rem ; height: 1rem">
 <h5>هل حضرت المستوى المتقدم للكتلة
                         </h5>
-                        <input type="radio" name="m3" <?php echo $form[3]=="NO"?"checked": "" ?>  value="NO"> لا<br>
-                        <input type="radio" name="m3" <?php echo $form[3]=="YES-1"?"checked": "" ?>  value="YES-1">نعم - مرة واحدة<br>
-                        <input type="radio" name="m3" <?php echo $form[3]=="YES-2"?"checked": "" ?>  value="YES-2">نعم - مرتين<br>
+                       <label> <input type="radio" name="m3" <?php echo $form[3]=="NO"?"checked": "" ?>  value="NO"> لا<br></label>
+                       <label> <input type="radio" name="m3" <?php echo $form[3]=="YES-1"?"checked": "" ?>  value="YES-1">نعم - مرة واحدة<br></label>
+                       <label> <input type="radio" name="m3" <?php echo $form[3]=="YES-2"?"checked": "" ?>  value="YES-2">نعم - مرتين<br></label>
                 <hr style="width: 40rem ; height: 1rem">
 
 
                     <h5>اذكر مشاركاتك في البرنامج الاختياري الخاص بدائرة الموارد البشرية
                     </h5>
+<?php
+//                        $users= (fallcheckbox('Optional', $_SESSION['user']));
+//                        foreach ($users as $user ){
+//
+//                            
+//                        }
+                        ?>
+<!--<br>                       <label> <input type="checkbox" name="pro[]"  value="المناظرات" --><?php //echo (fallcheckbox(,'المناظرات')==1)?"checked":""?><!-- >  دورة المناظرات <br></label>-->
 
-<br>
-                        <input type="checkbox" name="pro[]"  value="المناظرات" <?php echo (checkbox($form[0],'المناظرات')==1)?"checked":""?> >  دورة المناظرات <br>
-                        <input type="checkbox" name="pro[]"  value="مناظرة العمل الطلابي" <?php echo (checkbox($form[0],'مناظرة العمل الطلابي')==1)?"checked":""?> >  مناظرة العمل الطلابي<br>
-                        <input type="checkbox" name="pro[]"  value="الحواريات" <?php echo checkbox($form[0],'الحواريات')==1?"checked":""?> >   الحواريات  <br>
-                        <input type="checkbox" name="pro[]"  value="دورة مسؤولي الموارد" <?php echo checkbox($form[0],'دورة مسؤولي الموارد')==1?"checked":""?> > دورة مسؤولي الموارد البشرية<br>
-                        <input type="checkbox" name="pro[]"  value="دورة مسؤولي السنافر" <?php echo checkbox($form[0],'دورة مسؤولي السنافر')==1?"checked":""?> > دورة مسؤولي السنافر<br>
-                        <input type="checkbox" name="pro[]"  value="حوارية مؤسسة الاتحاد" <?php echo (checkbox($form[0],'حوارية مؤسسة الاتحاد')==1)?"checked":""?> >  حوارية مؤسسة الاتحاد <br>
-                        <input type="checkbox" name="pro[]"  value="تزكية النفس (النفس مع النفس)" <?php echo (checkbox($form[0],'تزكية النفس (النفس مع النفس)')==1)?"checked":""?> >  تزكية النفس (النفس مع النفس) <br>
-                        <input type="checkbox" name="pro[]"  value="أساليب الدعوة" <?php echo (checkbox($form[0],'أساليب الدعوة')==1)?"checked":""?> >  أساليب الدعوة <br>
-                        <input type="checkbox" name="pro[]"  value=" البحث العلمي " <?php echo (checkbox($form[0],' البحث العلمي ')==1)?"checked":""?> >  البحث العلمي <br>
-                        <input type="checkbox" name="pro[]"  value="التواصل الفعال و اختلاف الشخصيات" <?php echo (checkbox($form[0],'التواصل الفعال و اختلاف الشخصيات')==1)?"checked":""?> >  التواصل الفعال و اختلاف الشخصيات <br>
-                        <input type="checkbox" name="pro[]"  value="المغالطات المنطقية" <?php echo (checkbox($form[0],'المغالطات المنطقية')==1)?"checked":""?> > المغالطات المنطقية <br>
-                        <input type="checkbox" name="pro[]"  value="محاضرة العمل الطلابي" <?php echo (checkbox($form[0],'محاضرة العمل الطلابي')==1)?"checked":""?> > محاضرة العمل الطلابي <br>
-                        <input type="checkbox" name="pro[]"  value="إدارة فريق العمل و الاجتماعات" <?php echo (checkbox($form[0],'إدارة فريق العمل و الاجتماعات')==1)?"checked":""?> > إدارة فريق العمل و الاجتماعات  <br>
-                        <input type="checkbox" name="pro[]"  value="تنظيم الوقت وترتيب أولويات " <?php echo (checkbox($form[0],'تنظيم الوقت وترتيب أولويات ')==1)?"checked":""?> >تنظيم الوقت وترتيب أولويات  <br>
-                        <input type="checkbox" name="pro[]"  value="استبيان 2019" <?php echo checkbox($form[0],'استبيان 2019')==1?"checked":""?> > تعبئة استبيان 2019<br>
+
+
+
+
+                       <label> <input type="checkbox" name="pro[]"  value="المناظرات" <?php echo (checkbox($form[0],'المناظرات')==1)?"checked":""?> >  دورة المناظرات <br></label>
+                       <label> <input type="checkbox" name="pro[]"  value="مناظرة العمل الطلابي" <?php echo (checkbox($form[0],'مناظرة العمل الطلابي')==1)?"checked":""?> >  مناظرة العمل الطلابي<br></label>
+                      <label><input type="checkbox" name="pro[]"  value="الحواريات" <?php echo checkbox($form[0],'الحواريات')==1?"checked":""?> >   الحواريات  <br></label>
+                      <label>  <input type="checkbox" name="pro[]"  value="دورة مسؤولي الموارد" <?php echo checkbox($form[0],'دورة مسؤولي الموارد')==1?"checked":""?> > دورة مسؤولي الموارد البشرية<br></label>
+                      <label>  <input type="checkbox" name="pro[]"  value="دورة مسؤولي السنافر" <?php echo checkbox($form[0],'دورة مسؤولي السنافر')==1?"checked":""?> > دورة مسؤولي السنافر<br></label>
+                      <label>  <input type="checkbox" name="pro[]"  value="حوارية مؤسسة الاتحاد" <?php echo (checkbox($form[0],'حوارية مؤسسة الاتحاد')==1)?"checked":""?> >  حوارية مؤسسة الاتحاد <br></label>
+                      <label>  <input type="checkbox" name="pro[]"  value="تزكية النفس (النفس مع النفس)" <?php echo (checkbox($form[0],'تزكية النفس (النفس مع النفس)')==1)?"checked":""?> >  تزكية النفس (النفس مع النفس) <br></label>
+                      <label>  <input type="checkbox" name="pro[]"  value="أساليب الدعوة" <?php echo (checkbox($form[0],'أساليب الدعوة')==1)?"checked":""?> >  أساليب الدعوة <br></label>
+                      <label>  <input type="checkbox" name="pro[]"  value=" البحث العلمي " <?php echo (checkbox($form[0],' البحث العلمي ')==1)?"checked":""?> >  البحث العلمي <br></label>
+                       <label> <input type="checkbox" name="pro[]"  value="التواصل الفعال و اختلاف الشخصيات" <?php echo (checkbox($form[0],'التواصل الفعال و اختلاف الشخصيات')==1)?"checked":""?> >  التواصل الفعال و اختلاف الشخصيات <br></label>
+                       <label> <input type="checkbox" name="pro[]"  value="المغالطات المنطقية" <?php echo (checkbox($form[0],'المغالطات المنطقية')==1)?"checked":""?> > المغالطات المنطقية <br></label>
+                       <label> <input type="checkbox" name="pro[]"  value="محاضرة العمل الطلابي" <?php echo (checkbox($form[0],'محاضرة العمل الطلابي')==1)?"checked":""?> > محاضرة العمل الطلابي <br></label>
+                       <label> <input type="checkbox" name="pro[]"  value="إدارة فريق العمل و الاجتماعات" <?php echo (checkbox($form[0],'إدارة فريق العمل و الاجتماعات')==1)?"checked":""?> > إدارة فريق العمل و الاجتماعات  <br></label>
+                       <label> <input type="checkbox" name="pro[]"  value="تنظيم الوقت وترتيب أولويات " <?php echo (checkbox($form[0],'تنظيم الوقت وترتيب أولويات ')==1)?"checked":""?> >تنظيم الوقت وترتيب أولويات  <br></label>
+                       <label> <input type="checkbox" name="pro[]"  value="استبيان 2019" <?php echo checkbox($form[0],'استبيان 2019')==1?"checked":""?> > تعبئة استبيان 2019<br></label>
 
                         <img class="row m-5" src="theme/css/..image/img/التطوع%20عبادة%20وانتماء.jpg" alt="" style="height: 22rem">
      <div class="row mt-5">
@@ -239,54 +250,54 @@ $forms = $execute->fetch_all();
 
                         <h5>ما هو مسماك الوظيفي فيها؟
                         </h5>
-                        <input type="radio" name="jop" <?php echo $form[6]=="لا اعمل بالكلية حالي"?"checked": "" ?> value="لا اعمل بالكلية حالي"> لا اعمل بالكلية حاليا<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="أحد أفراد الفريق العام"?"checked": "" ?> value="أحد أفراد الفريق العام">أحد أفراد الفريق العام<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="مسؤول كلية"?"checked": "" ?> value="مسؤول كلية">مسؤول كلية<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="مسؤول اللجنة أو الفريق"?"checked": "" ?> value="مسؤول اللجنة أو الفريق">مسؤول اللجنة أو الفريق<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="المسؤول الاعلامي"?"checked": "" ?> value="المسؤول الاعلامي">المسؤول الاعلامي<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء الفريق الإعلامي"?"checked": "" ?> value="احد اعضاء الفريق الإعلامي">احد اعضاء الفريق الإعلامي<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="المسؤول التربوي"?"checked": "" ?> value="المسؤول التربوي">المسؤول التربوي<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء الفريق التربوي"?"checked": "" ?> value="احد اعضاء الفريق التربوي">احد اعضاء الفريق التربوي<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="مسؤول الموارد - التدريب و التطوير"?"checked": "" ?> value="مسؤول الموارد - التدريب و التطوير">مسؤول الموارد - التدريب و التطوير<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء فريق الموارد - التدريب"?"checked": "" ?> value="احد اعضاء فريق الموارد - التدريب">احد اعضاء فريق الموارد - التدريب<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="مسؤول الأنشطة"?"checked":"" ?> value="مسؤول الأنشطة">مسؤول الأنشطة<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء فريق الانشطة"?"checked": "" ?>value="احد اعضاء فريق الانشطة">احد اعضاء فريق الانشطة<br>
-                        <input type="radio" name="jop" <?php echo $form[6]=="غير ذلك"?"checked": "" ?> value="غير ذلك">غير ذلك<br>
+                     <label>   <input type="radio" name="jop" <?php echo $form[6]=="لا اعمل بالكلية حالي"?"checked": "" ?> value="لا اعمل بالكلية حالي"> لا اعمل بالكلية حاليا<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="أحد أفراد الفريق العام"?"checked": "" ?> value="أحد أفراد الفريق العام">أحد أفراد الفريق العام<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="مسؤول كلية"?"checked": "" ?> value="مسؤول كلية">مسؤول كلية<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="مسؤول اللجنة أو الفريق"?"checked": "" ?> value="مسؤول اللجنة أو الفريق">مسؤول اللجنة أو الفريق<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="المسؤول الاعلامي"?"checked": "" ?> value="المسؤول الاعلامي">المسؤول الاعلامي<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء الفريق الإعلامي"?"checked": "" ?> value="احد اعضاء الفريق الإعلامي">احد اعضاء الفريق الإعلامي<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="المسؤول التربوي"?"checked": "" ?> value="المسؤول التربوي">المسؤول التربوي<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء الفريق التربوي"?"checked": "" ?> value="احد اعضاء الفريق التربوي">احد اعضاء الفريق التربوي<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="مسؤول الموارد - التدريب و التطوير"?"checked": "" ?> value="مسؤول الموارد - التدريب و التطوير">مسؤول الموارد - التدريب و التطوير<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء فريق الموارد - التدريب"?"checked": "" ?> value="احد اعضاء فريق الموارد - التدريب">احد اعضاء فريق الموارد - التدريب<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="مسؤول الأنشطة"?"checked":"" ?> value="مسؤول الأنشطة">مسؤول الأنشطة<br></label>
+                       <label> <input type="radio" name="jop" <?php echo $form[6]=="احد اعضاء فريق الانشطة"?"checked": "" ?>value="احد اعضاء فريق الانشطة">احد اعضاء فريق الانشطة<br></label>
+                      <label>  <input type="radio" name="jop" <?php echo $form[6]=="غير ذلك"?"checked": "" ?> value="غير ذلك">غير ذلك<br></label>
 
 
                         <hr style="width: 40rem ; height: 1rem">
 
                         <h5>هل كنت في ما مضى أو في الوقت الحالي عضو اتحاد؟</h5>
-                        <input type="radio" name="vice" <?php echo $form[7]=="yes"?"checked": "" ?> value="yes"> نعم<br>
-                        <input type="radio" name="vice" <?php echo $form[7]=="no"?"checked": "" ?> value="no"> لا<br>
+                       <label> <input type="radio" name="vice" <?php echo $form[7]=="yes"?"checked": "" ?> value="yes"> نعم<br></label>
+                       <label> <input type="radio" name="vice" <?php echo $form[7]=="no"?"checked": "" ?> value="no"> لا<br></label>
                         <hr style="width: 40rem ; height: 1rem">
 
                         <h5>العمل على مستوى القطاعات</h5>
-                        <input type="radio" name="sector" <?php echo $form[8]==" لا اعمل على مستوى القطاع حاليا"?"checked": "" ?> value=" لا اعمل على مستوى القطاع حاليا"> لا اعمل على مستوى القطاع حاليا<br>
-                        <input type="radio" name="sector" <?php echo $form[8]=="مسؤول قطاع"?"checked": "" ?>  value="مسؤول قطاع"> مسؤول قطاع<br>
-                        <input type="radio" name="sector"  <?php echo $form[8]=="أمين سر القطاع"?"checked": "" ?> value="أمين سر القطاع"> أمين سر القطاع<br>
-                        <input type="radio" name="sector"  <?php echo $form[8]=="مسؤل اعلامي للقطاع"?"checked": "" ?> value="مسؤل اعلامي للقطاع"> مسؤل اعلامي للقطاع<br>
-                        <input type="radio" name="sector"  <?php echo $form[8]=="مسؤول أنشطة للقطاع"?"checked": "" ?> value="مسؤول أنشطة للقطاع"> مسؤول أنشطة للقطاع<br>
-                        <input type="radio" name="sector" <?php echo $form[8]=="مسؤول موارد للقطاع"?"checked": "" ?>  value="مسؤول موارد للقطاع"> مسؤول موارد للقطاع<br>
-                        <input type="radio" name="sector" <?php echo $form[8]=="مسؤول تربوي للقطاع"?"checked": "" ?>  value="مسؤول تربوي للقطاع"> مسؤول تربوي للقطاع<br>
-                        <input type="radio" name="sector" <?php echo $form[8]=="غير ذلك"?"checked": "" ?>  value="غير ذلك">غير ذلك<br>
+                       <label> <input type="radio" name="sector" <?php echo $form[8]==" لا اعمل على مستوى القطاع حاليا"?"checked": "" ?> value=" لا اعمل على مستوى القطاع حاليا"> لا اعمل على مستوى القطاع حاليا<br></label>
+                       <label> <input type="radio" name="sector" <?php echo $form[8]=="مسؤول قطاع"?"checked": "" ?>  value="مسؤول قطاع"> مسؤول قطاع<br></label>
+                       <label> <input type="radio" name="sector"  <?php echo $form[8]=="أمين سر القطاع"?"checked": "" ?> value="أمين سر القطاع"> أمين سر القطاع<br></label>
+                       <label> <input type="radio" name="sector"  <?php echo $form[8]=="مسؤل اعلامي للقطاع"?"checked": "" ?> value="مسؤل اعلامي للقطاع"> مسؤل اعلامي للقطاع<br></label>
+                       <label> <input type="radio" name="sector"  <?php echo $form[8]=="مسؤول أنشطة للقطاع"?"checked": "" ?> value="مسؤول أنشطة للقطاع"> مسؤول أنشطة للقطاع<br></label>
+                       <label> <input type="radio" name="sector" <?php echo $form[8]=="مسؤول موارد للقطاع"?"checked": "" ?>  value="مسؤول موارد للقطاع"> مسؤول موارد للقطاع<br></label>
+                       <label> <input type="radio" name="sector" <?php echo $form[8]=="مسؤول تربوي للقطاع"?"checked": "" ?>  value="مسؤول تربوي للقطاع"> مسؤول تربوي للقطاع<br></label>
+                       <label> <input type="radio" name="sector" <?php echo $form[8]=="غير ذلك"?"checked": "" ?>  value="غير ذلك">غير ذلك<br></label>
                         <hr style="width: 40rem ; height: 1rem">
 
                         <h5>ما هو عملك الحالي على المستوى المركزي </h5>
-                        <input type="radio" name="central" <?php echo $form[9]=="لا اعمل على المستوى المركزي حاليا"?"checked":""?> value="لا اعمل على المستوى المركزي حاليا"> لا اعمل على المستوى المركزي حاليا<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="عضو مجلس أمناء"?"checked": "" ?> value="عضو مجلس أمناء"> عضو مجلس أمناء<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="مسؤول الكتلة"?"checked":""?> value="مسؤول الكتلة"> مسؤول كتلة<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="نائب مسؤول كتلة"?"checked": "" ?> value="نائب مسؤول كتلة"> نائب مسؤول كتلة <br>
-                        <input type="radio" name="central" <?php echo $form[9]=="أمين السر"?"checked": "" ?> value="أمين السر">أمين السر<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="مسؤول دائرة الموارد البشرية"?"checked": "" ?> value="مسؤول دائرة الموارد البشرية"> مسؤول دائرة الموارد البشرية<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="احد اعضاء دائرة الموارد البشرية"?"checked": "" ?> value="احد اعضاء دائرة الموارد البشرية">احد اعضاء دائرة الموارد البشرية <br>
-                        <input type="radio" name="central" <?php echo $form[9]=="مسؤول دائرة المشاريع و الأنشطة"?"checked": "" ?> value="مسؤول دائرة المشاريع و الأنشطة">مسؤول دائرة المشاريع و الأنشطة<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="احد اعضاء دائرة المشاريع و الأنشطة"?"checked": "" ?> value="احد اعضاء دائرة المشاريع و الأنشطة">احد اعضاء دائرة المشاريع و الانشطة<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="مسؤول الدائرة الإعلامية"?"checked": "" ?> value="مسؤول الدائرة الإعلامية"> مسؤول الدائرة الاعلامية<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="احد اعضاء الدائرة الاعلامية"?"checked": "" ?> value="احد اعضاء الدائرة الاعلامية"> احد اعضاء الدائرة الاعلامية<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="مسؤول دائرة الاتحاد"?"checked": "" ?> value="مسؤول دائرة الاتحاد"> مسؤول دائرة الاتحاد<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="احد اعضاء دائرة الاتحاد"?"checked": "" ?> value="احد اعضاء دائرة الاتحاد"> احد اعضاء دائرة الاتحاد<br>
-                        <input type="radio" name="central" <?php echo $form[9]=="غير ذلك"?"checked": "" ?> value="غير ذلك">غير ذلك<br>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="لا اعمل على المستوى المركزي حاليا"?"checked":""?> value="لا اعمل على المستوى المركزي حاليا"> لا اعمل على المستوى المركزي حاليا<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="عضو مجلس أمناء"?"checked": "" ?> value="عضو مجلس أمناء"> عضو مجلس أمناء<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="مسؤول الكتلة"?"checked":""?> value="مسؤول الكتلة"> مسؤول كتلة<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="نائب مسؤول كتلة"?"checked": "" ?> value="نائب مسؤول كتلة"> نائب مسؤول كتلة <br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="أمين السر"?"checked": "" ?> value="أمين السر">أمين السر<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="مسؤول دائرة الموارد البشرية"?"checked": "" ?> value="مسؤول دائرة الموارد البشرية"> مسؤول دائرة الموارد البشرية<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="احد اعضاء دائرة الموارد البشرية"?"checked": "" ?> value="احد اعضاء دائرة الموارد البشرية">احد اعضاء دائرة الموارد البشرية <br></label>
+                         <label><input type="radio" name="central" <?php echo $form[9]=="مسؤول دائرة المشاريع و الأنشطة"?"checked": "" ?> value="مسؤول دائرة المشاريع و الأنشطة">مسؤول دائرة المشاريع و الأنشطة<br></label>
+                         <label><input type="radio" name="central" <?php echo $form[9]=="احد اعضاء دائرة المشاريع و الأنشطة"?"checked": "" ?> value="احد اعضاء دائرة المشاريع و الأنشطة">احد اعضاء دائرة المشاريع و الانشطة<br></label>
+                         <label><input type="radio" name="central" <?php echo $form[9]=="مسؤول الدائرة الإعلامية"?"checked": "" ?> value="مسؤول الدائرة الإعلامية"> مسؤول الدائرة الاعلامية<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="احد اعضاء الدائرة الاعلامية"?"checked": "" ?> value="احد اعضاء الدائرة الاعلامية"> احد اعضاء الدائرة الاعلامية<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="مسؤول دائرة الاتحاد"?"checked": "" ?> value="مسؤول دائرة الاتحاد"> مسؤول دائرة الاتحاد<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="احد اعضاء دائرة الاتحاد"?"checked": "" ?> value="احد اعضاء دائرة الاتحاد"> احد اعضاء دائرة الاتحاد<br></label>
+                        <label> <input type="radio" name="central" <?php echo $form[9]=="غير ذلك"?"checked": "" ?> value="غير ذلك">غير ذلك<br></label>
                        <hr style="width: 40rem ; height: 1rem">
 
                         <div class="row mt-5">
@@ -342,49 +353,49 @@ $forms = $execute->fetch_all();
                         <hr style="width: 40rem ; height: 1rem">
                         <h5>ما هي أهم المهارات  التي تمتلكها
                         </h5>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'كتابة المحتوى الاعلامي')==1)?"checked":""?> value="كتابة المحتوى الاعلامي"> كتابة المحتوى الاعلامي<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'التصميم')==1)?"checked":""?> value="التصميم"> التصميم<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'المونتاج')==1)?"checked":""?> value="المونتاج">المونتاج <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'التصوير')==1)?"checked":""?> value="التصوير">التصوير <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'الرسم')==1)?"checked":""?> value="الرسم">الرسم <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'تخطيط فعاليات و أنشطة')==1)?"checked":""?> value="تخطيط فعاليات و أنشطة">تخطيط فعاليات و أنشطة <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'تقديم فعاليات')==1)?"checked":""?> value="تقديم فعاليات"> تقديم فعاليات<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مسؤولية النظام بالأنشطة والفعاليات الكبيرة')==1)?"checked":""?> value="مسؤولية النظام بالأنشطة والفعاليات الكبيرة ">مسؤولية النظام بالأنشطة والفعاليات الكبيرة <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'خبير ضيافة')==1)?"checked":""?> value="خبير ضيافة"> خبير ضيافة<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'خبير ديكور و تزيين')==1)?"checked":""?>  value="خبير ديكور و تزيين">خبير ديكور و تزيين <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مهارات إقناع و تحدث')==1)?"checked":""?> value="مهارات إقناع و تحدث"> مهارات إقناع و تحدث<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'القدرة على المناظرة المحترفة')==1)?"checked":""?> value="القدرة على المناظرة المحترفة"> القدرة على المناظرة المحترفة<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مهارة قيادة الفريق')==1)?"checked":""?> value="مهارة قيادة الفريق"> مهارة قيادة الفريق<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مهارات إدارية')==1)?"checked":""?> value="مهارات إدارية">مهارات إدارية <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'استخدام Microsoft word')==1)?"checked":""?>  value="استخدام Microsoft word"> استخدام Microsoft word<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'استخدام Microsoft excel')==1)?"checked":""?> value="استخدام Microsoft excel">استخدام Microsoft excel <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'استخدام Microsoft powerpoint ')==1)?"checked":""?> value="استخدام Microsoft powerpoint ">استخدام Microsoft powerpoint <br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'عزف')==1)?"checked":""?> value="عزف">عزف<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'نشيد')==1)?"checked":""?> value="نشيد">نشيد<br>
-                        <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'كتابة سيناريوهات')==1)?"checked":""?> value="كتابة سيناريوهات">كتابة سيناريوهات <br>
+                       <tabel> <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'كتابة المحتوى الاعلامي')==1)?"checked":""?> value="كتابة المحتوى الاعلامي"> كتابة المحتوى الاعلامي<br></tabel>
+                      <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'التصميم')==1)?"checked":""?> value="التصميم"> التصميم<br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'المونتاج')==1)?"checked":""?> value="المونتاج">المونتاج <br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'التصوير')==1)?"checked":""?> value="التصوير">التصوير <br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'الرسم')==1)?"checked":""?> value="الرسم">الرسم <br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'تخطيط فعاليات و أنشطة')==1)?"checked":""?> value="تخطيط فعاليات و أنشطة">تخطيط فعاليات و أنشطة <br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'تقديم فعاليات')==1)?"checked":""?> value="تقديم فعاليات"> تقديم فعاليات<br></tabel>
+                      <tabel>   <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مسؤولية النظام بالأنشطة والفعاليات الكبيرة')==1)?"checked":""?> value="مسؤولية النظام بالأنشطة والفعاليات الكبيرة ">مسؤولية النظام بالأنشطة والفعاليات الكبيرة <br></tabel>
+                      <tabel>   <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'خبير ضيافة')==1)?"checked":""?> value="خبير ضيافة"> خبير ضيافة<br></tabel>
+                      <tabel>   <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'خبير ديكور و تزيين')==1)?"checked":""?>  value="خبير ديكور و تزيين">خبير ديكور و تزيين <br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مهارات إقناع و تحدث')==1)?"checked":""?> value="مهارات إقناع و تحدث"> مهارات إقناع و تحدث<br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'القدرة على المناظرة المحترفة')==1)?"checked":""?> value="القدرة على المناظرة المحترفة"> القدرة على المناظرة المحترفة<br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مهارة قيادة الفريق')==1)?"checked":""?> value="مهارة قيادة الفريق"> مهارة قيادة الفريق<br></tabel>
+                      <tabel>   <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'مهارات إدارية')==1)?"checked":""?> value="مهارات إدارية">مهارات إدارية <br></tabel>
+                      <tabel>   <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'استخدام Microsoft word')==1)?"checked":""?>  value="استخدام Microsoft word"> استخدام Microsoft word<br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'استخدام Microsoft excel')==1)?"checked":""?> value="استخدام Microsoft excel">استخدام Microsoft excel <br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'استخدام Microsoft powerpoint ')==1)?"checked":""?> value="استخدام Microsoft powerpoint ">استخدام Microsoft powerpoint <br></tabel>
+                      <tabel>   <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'عزف')==1)?"checked":""?> value="عزف">عزف<br></tabel>
+                      <tabel>   <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'نشيد')==1)?"checked":""?> value="نشيد">نشيد<br></tabel>
+                       <tabel>  <input type="checkbox" name="skill[]" <?php echo (checkbox2($form[0],'كتابة سيناريوهات')==1)?"checked":""?> value="كتابة سيناريوهات">كتابة سيناريوهات <br></tabel>
                         <hr style="width: 40rem ; height: 1rem">
                         <h5>جوانب إبداعية و مميزات تمتلكها
                         </h5>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'مخزون ثقافي واسع')==1)?"checked":""?> value="مخزون ثقافي واسع">مخزون ثقافي واسع<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة أكاديمية بالتخصص')==1)?"checked":""?> value="معرفة أكاديمية بالتخصص">معرفة أكاديمية بالتخصص<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'العمل الجماعي')==1)?"checked":""?> value="العمل الجماعي">العمل الجماعي<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'تنظيم الوقت')==1)?"checked":""?> value="تنظيم الوقت">تنظيم الوقت<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة سياسية')==1)?"checked":""?> value="معرفة سياسية">معرفة سياسية<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة واسعة بالقضية الفلسطينية')==1)?"checked":""?> value="معرفة واسعة بالقضية الفلسطينية">معرفة واسعة بالقضية الفلسطينية<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'قراءة كتب')==1)?"checked":""?>  value="قراءة كتب">قراءة كتب<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'تلاوة القرآن')==1)?"checked":""?> value="تلاوة القرآن">تلاوة القرآن<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'صوت جميل')==1)?"checked":""?> value="صوت جميل">صوت جميل<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'التمثيل المسرحي')==1)?"checked":""?> value="التمثيل المسرحي">التمثيل المسرحي<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'التمثيل بالفيديوهات')==1)?"checked":""?> value="التمثيل بالفيديوهات">التمثيل بالفيديوهات<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'علاقات عامة و رعايات')==1)?"checked":""?> value="علاقات عامة و رعايات">علاقات عامة و رعايات<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'الترجمة من اللغة الانجليزية')==1)? "checked":""?>  value="الترجمة من اللغة الانجليزية">الترجمة من اللغة الانجليزية<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة دينية واسعة')==1)?"checked":""?> value="معرفة دينية واسعة">معرفة دينية واسعة<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'التحدث بالفصحى بطلاقة')==1)?"checked":""?> value="التحدث بالفصحى بطلاقة">التحدث بالفصحى بطلاقة<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'أنماط الشخصيات')==1)?"checked":""?> value="تحليل أنماط الشخصيات">تحليل أنماط الشخصيات<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'متمكن في علوم النفس و التحليل النفسي')==1)?"checked":""?> value="متمكن في علوم النفس و التحليل النفسي">متمكن في علوم النفس و التحليل النفسي<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],' معرفة تحليلية وفلسفية عميقة ')==1)?"checked":""?> value="معرفة تحليلية و فلسفية عميقة  ">معرفة تحليلية و فلسفية عميقة<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'إنشاء التطبيقات و المواقع')==1)?"checked":""?> value="البرمجة وإنشاء التطبيقات و المواقع">البرمجة وإنشاء التطبيقات و المواقع<br>
-                        <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'شخصية اجتماعية و محبوبة')==1)?"checked":""?> value="شخصية اجتماعية و محبوبة">شخصية اجتماعية و محبوبة<br>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'مخزون ثقافي واسع')==1)?"checked":""?> value="مخزون ثقافي واسع">مخزون ثقافي واسع<br> </tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة أكاديمية بالتخصص')==1)?"checked":""?> value="معرفة أكاديمية بالتخصص">معرفة أكاديمية بالتخصص<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'العمل الجماعي')==1)?"checked":""?> value="العمل الجماعي">العمل الجماعي<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'تنظيم الوقت')==1)?"checked":""?> value="تنظيم الوقت">تنظيم الوقت<br></tabel>
+                        <tabel> <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة سياسية')==1)?"checked":""?> value="معرفة سياسية">معرفة سياسية<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة واسعة بالقضية الفلسطينية')==1)?"checked":""?> value="معرفة واسعة بالقضية الفلسطينية">معرفة واسعة بالقضية الفلسطينية<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'قراءة كتب')==1)?"checked":""?>  value="قراءة كتب">قراءة كتب<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'تلاوة القرآن')==1)?"checked":""?> value="تلاوة القرآن">تلاوة القرآن<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'صوت جميل')==1)?"checked":""?> value="صوت جميل">صوت جميل<br></tabel>
+                        <tabel> <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'التمثيل المسرحي')==1)?"checked":""?> value="التمثيل المسرحي">التمثيل المسرحي<br></tabel>
+                        <tabel> <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'التمثيل بالفيديوهات')==1)?"checked":""?> value="التمثيل بالفيديوهات">التمثيل بالفيديوهات<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'علاقات عامة و رعايات')==1)?"checked":""?> value="علاقات عامة و رعايات">علاقات عامة و رعايات<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'الترجمة من اللغة الانجليزية')==1)? "checked":""?>  value="الترجمة من اللغة الانجليزية">الترجمة من اللغة الانجليزية<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'معرفة دينية واسعة')==1)?"checked":""?> value="معرفة دينية واسعة">معرفة دينية واسعة<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'التحدث بالفصحى بطلاقة')==1)?"checked":""?> value="التحدث بالفصحى بطلاقة">التحدث بالفصحى بطلاقة<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'أنماط الشخصيات')==1)?"checked":""?> value="تحليل أنماط الشخصيات">تحليل أنماط الشخصيات<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'متمكن في علوم النفس و التحليل النفسي')==1)?"checked":""?> value="متمكن في علوم النفس و التحليل النفسي">متمكن في علوم النفس و التحليل النفسي<br></tabel>
+                      <tabel>   <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],' معرفة تحليلية وفلسفية عميقة ')==1)?"checked":""?> value="معرفة تحليلية و فلسفية عميقة  ">معرفة تحليلية و فلسفية عميقة<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'إنشاء التطبيقات و المواقع')==1)?"checked":""?> value="البرمجة وإنشاء التطبيقات و المواقع">البرمجة وإنشاء التطبيقات و المواقع<br></tabel>
+                       <tabel>  <input type="checkbox" name="adv[]" <?php echo (checkbox3($form[0],'شخصية اجتماعية و محبوبة')==1)?"checked":""?> value="شخصية اجتماعية و محبوبة">شخصية اجتماعية و محبوبة<br></tabel>
                         <hr style="width: 40rem ; height: 1rem">
 
                         <h5>مهارات و جوانب تتمنى من دائرة الموارد البشرية العمل على تطويرها لك</h5>

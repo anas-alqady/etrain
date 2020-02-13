@@ -3,7 +3,7 @@
 include_once('include/config.php');
 include_once('include/functions.php');
 if (!empty($_SESSION['user'])) {
-    header("location: http://localhost/project-forms/profile.php");
+    header("location: http://localhost/hemma-1/profile.php");
 }
 ?>
 <html>

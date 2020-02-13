@@ -4,7 +4,7 @@ include_once ('include/functions.php');
 
 if(!isset($_SESSION['user']) && ($_POST['email'] != "Admin2020@gmail.com"))
 {
-    header("location:http://localhost/project-forms/login.php");
+    header("location:http://localhost/hemma-1/login.php");
 }
 $id=$_GET['id'];
 $query="SELECT * FROM users WHERE id ='$id'";

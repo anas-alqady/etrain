@@ -65,13 +65,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $execute = $mysql->query($query);
 
     if ($execute->num_rows === 1) {
-        header("location:/hemmah-1/register.php");
+        header("location:register.php");
     } else {
         $password = md5($password);
         $query = "INSERT INTO users (username,email,password,phone,major,sector,dofaa,image) VALUES('$username','$email','$password','$phone','$major','$sector','$dofaa','$image')";
         $mysql->prepare($query)->execute();
         $_SESSION['user'] = $execute->fetch_assoc()["id"]; // 11
-        header("location:http://localhost/project-forms/index.php");
+        header("location:http://localhost/hemma-1/index.php");
 
     }
 

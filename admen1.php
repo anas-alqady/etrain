@@ -5,11 +5,9 @@ use http\Env\Request;
 include_once ('./include/config.php');
 include_once ('./include/functions.php');
 
-//if (!isset($_SESSION['user']) && ($_POST['email'] == "Admin2020@gmail.com")){
-//    header("location: http://localhost/hemmah-1/login.php");
-//}
+
 if(!isset($_SESSION['user']) ){
-    header("location:http://localhost/project-forms/login.php");
+    header("location:http://localhost/hemma-1/login.php");
 }
 $query = "SELECT * FROM users";
 $execute = $mysql->query($query);
@@ -198,15 +196,6 @@ align-items: center">
     let count = document.getElementById("count");
     count++;
 </script>
-
-<?
-$excel=$_POST['excel'];
-function excel ()
-{
-header("content-TYPE:application/xls");
-header("content-disposition:admen1.php; filename=download.xls");
-}
-?>
 
 </body>
 </html>

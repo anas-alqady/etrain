@@ -48,6 +48,6 @@ ActivitiesHemmah,ActivitiesVice,viewActivities,skile,Advantages,Development,note
     VALUES ('$m1','$m2','$m3','$tow','$team','$jop','$vice','$sector','$central','$activhem','$activet','$activsec','$three',
     '$one','$humannote','$notes','$user_id','$facemail','$sechours','$completHours','$average','$yourself','$dis','$advyourself')";
     $execute= $mysql->query($query);
-    header("location:http://localhost/project-forms/profile.php");
+    header("location:http://localhost/hemma-1/profile.php");
     }
 

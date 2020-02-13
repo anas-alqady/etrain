@@ -26,10 +26,10 @@ $execute= $mysql->query($query);
 
 if ($execute->num_rows === 1 ) {
     $_SESSION['user'] = $execute->fetch_assoc()["id"]; // 11
-    header("location: http://localhost/project-forms/admen1.php");
+    header("location: http://localhost/hemma-1/admen1.php");
 }
 else {
-    header("location: http://localhost/project-forms/login-admin.php");
+    header("location: http://localhost/hemma-1/login-admin.php");
 }}
 
 
