@@ -203,7 +203,7 @@ $forms = $execute->fetch_all();
 //                        $users= (fallcheckbox('Optional', $_SESSION['user']));
 //                        foreach ($users as $user ){
 //
-//                            
+//
 //                        }
                         ?>
 <!--<br>                       <label> <input type="checkbox" name="pro[]"  value="المناظرات" --><?php //echo (fallcheckbox(,'المناظرات')==1)?"checked":""?><!-- >  دورة المناظرات <br></label>-->
