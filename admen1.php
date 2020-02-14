@@ -4,10 +4,14 @@ use http\Env\Request;
 
 include_once ('./include/config.php');
 include_once ('./include/functions.php');
+$user=$_SESSION['user'];
+$query = "SELECT * FROM users WHERE id='$user'";
+$execute = $mysql->query($query);
+$info = $execute->fetch_array();
 
-
-if(!isset($_SESSION['user']) ){
+if($info['email']!="admin20@gamil.com"){
     header("location:http://localhost/hemma-1/login.php");
+    die;
 }
 $query = "SELECT * FROM users";
 $execute = $mysql->query($query);

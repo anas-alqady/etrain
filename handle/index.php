@@ -30,8 +30,7 @@ if(isset($_POST['submit'])) {
     $sector = $_POST['sector'];
     $central = $_POST['central'];
     $activhem = $_POST['activ-hem'];
-    $activet = $_POST['activ-et'];
-    $activsec = $_POST['activ-sec'];
+      $activsec = $_POST['activ-sec'];
     $humannote = htmlspecialchars($_POST['Human-Resources']);
     $notes = htmlspecialchars($_POST['notes']);
     $user_id=$_SESSION['user'];

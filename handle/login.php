@@ -29,6 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     else{
         header("location: http://localhost/hemma-1/login.php");
+        die;
     }
 
 

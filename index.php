@@ -4,6 +4,7 @@ include_once ("./include/functions.php");
 
 if(!isset($_SESSION['user']) ){
     header("location:http://localhost/hemma-1/login.php");
+    die;
 }
 else
     {
