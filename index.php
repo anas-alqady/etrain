@@ -176,8 +176,7 @@ else
                             </div>
                         </div>
 
-                        <h5>هل حضرت المستوى التمهيدي؟ السؤال خاص بدفعة 018 وما بعد</h5>
-                        <input type="radio" name="m1"  id="" value="yes"> yes <br>
+                        <h5>هل حضرت المستوى التمهيدي؟ السؤال خاص بدفعة 018 وما بعد</h5><input type="radio" name="m1"  id="" value="yes"> yes <br>
                         <input type="radio" name="m1"  id="" value=yes"> no <br>
 
 
